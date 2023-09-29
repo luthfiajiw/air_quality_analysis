@@ -50,7 +50,7 @@ def create_registered_holiday_df(df: pd.DataFrame) -> pd.DataFrame:
   return registered_holiday_grouped
 
 # LOAD PROCESSED DATA
-processed_df = pd.read_csv("processed_data.csv")
+processed_df = pd.read_csv("../dashboard/processed_data.csv")
 processed_df["date"] = pd.to_datetime(processed_df["date"])
 
 st.header(':man-biking: Bike Sharing Dashboard')
