@@ -80,6 +80,14 @@ ax.set_xlabel("Season", fontsize=16)
 
 st.pyplot(fig)
 
+with st.expander("Seasonal Rentals Explanation"):
+  st.write(
+    """
+    Based on the bar chart above, it can be seen that the Fall season is the season with the most rentals 
+    followed by the Summer season in second place.
+    """
+  )
+
 # RENTAL TIME PREFERENCES
 casual_workingday_df = create_casual_workingday_df(processed_df)
 registered_workingday_df = create_registered_workingday_df(processed_df)
@@ -110,6 +118,13 @@ ax[1].pie(
 )
 
 st.pyplot(fig)
+with st.expander("Rentals on Working Day Explanation"):
+  st.write(
+    """
+    Judging from bicycle rental time preferences based on working days, more casual users rent on non-working days, 
+    while more registered users rent on working days.
+    """
+  )
 
 # HOLIDAY
 casual_holiday_df = create_casual_holiday_df(processed_df)
@@ -140,6 +155,13 @@ ax[1].pie(
 )
 
 st.pyplot(fig)
+with st.expander("Rentals on Holiday Explanation"):
+  st.write(
+    """
+    Judging from the preference for bicycle rental times based on holidays (which are not weekends), 
+    more casual users rent on non-holidays, as do registered users.
+    """
+  )
 
 # BIKE RENTAL TRENDS
 monthly_df = create_monthly_df(processed_df)
@@ -155,3 +177,10 @@ ax.plot(
 ax.set_title("Bike Rental Trends (2011-2012)")
 
 st.pyplot(fig)
+with st.expander("Rental Trends Explanation"):
+  st.write(
+    """
+    Bicycle rentals experienced an increase from the beginning in January 2011 to mid-2011 but decreased at the end of the year. 
+    The highest peak in rentals was recorded in mid-2012 to the last 1/3 of 2012, at the end of the year bicycle rentals experienced a significant decline.
+    """
+  )
